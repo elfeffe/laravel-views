@@ -13,11 +13,16 @@ class LaravelViews
 
     public function components()
     {
+        // path => name
         return [
             'buttons.icon' => 'icon-button',
             'drop-down' => 'drop-down',
-            'actions' => 'actions',
+            'actions.actions' => 'actions',
+            'actions.icon-and-title' => 'actions.icon-and-title',
+            'actions.icon' => 'actions.icon',
             'attributes-list' => 'attributes-list',
+            'alert' => 'alert',
+            'alerts-handler' => 'alerts-handler',
         ];
     }
 
