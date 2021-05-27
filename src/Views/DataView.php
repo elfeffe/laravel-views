@@ -45,6 +45,14 @@ abstract class DataView extends View
 
     public $sortOrder = 'asc';
 
+    /**
+     * @param array $data
+     * @return void
+     */
+    public function update(array $data): void
+    {
+    }
+
     public function hydrate()
     {
         $this->filtersViews = $this->filters();
