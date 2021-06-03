@@ -16,6 +16,7 @@ class LaravelViews
         // path => name
         return [
             'buttons.icon' => 'icon-button',
+            'buttons.select' => 'select-button',
             'drop-down' => 'drop-down',
             'actions.actions' => 'actions',
             'actions.icon-and-title' => 'actions.icon-and-title',
@@ -23,6 +24,8 @@ class LaravelViews
             'attributes-list' => 'attributes-list',
             'alert' => 'alert',
             'alerts-handler' => 'alerts-handler',
+            'form.input-group' => 'form.input-group',
+            'icon' => 'icon'
         ];
     }
 
@@ -71,7 +74,8 @@ class LaravelViews
     {
         $assets = [
             'livewire' => Livewire::scripts(),
-            'laravel-views' => '<script src="' . asset('/vendor/laravel-views.js') . '" type="text/javascript"></script>'
+            'laravel-views' => '<script src="' . asset('/vendor/laravel-views.js') . '" type="text/javascript"></script>',
+            'ckeditor' => '<script src="//cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js" type="text/javascript"></script>'
         ];
 
         return $this->getCustomizedLinks($assets, $options);
@@ -99,7 +103,7 @@ class LaravelViews
             $links = [];
 
             foreach ($assets as $asset => $link) {
-                if (in_array($asset, $options)) {
+                if (in_array(trim($asset), $options)) {
                     $links[] = $link;
                 }
             }
