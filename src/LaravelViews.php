@@ -74,8 +74,7 @@ class LaravelViews
     {
         $assets = [
             'livewire' => Livewire::scripts(),
-            'laravel-views' => '<script src="' . asset('/vendor/laravel-views.js') . '" type="text/javascript"></script>',
-            'ckeditor' => '<script src="//cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js" type="text/javascript"></script>'
+            'laravel-views' => '<script src="' . asset('/vendor/laravel-views.js') . '" type="text/javascript"></script>'
         ];
 
         return $this->getCustomizedLinks($assets, $options);
