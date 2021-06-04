@@ -68,7 +68,6 @@ class LaravelViewsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViews()
-            ->loadLivewireComponents()
             ->loadCommands()
             ->publish()
             ->bladeDirectives()
@@ -102,13 +101,6 @@ class LaravelViewsServiceProvider extends ServiceProvider
     private function loadViews()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-views');
-
-        return $this;
-    }
-
-    private function loadLivewireComponents()
-    {
-        Livewire::component('laravel-views-ckeditor', CKEditor::class);
 
         return $this;
     }
