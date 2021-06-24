@@ -14,7 +14,7 @@ You can customize all the html and css classes but YOU MUST KEEP THE BLADE AND L
   x-data="{ open: false }"
 >
   @isset($trigger)
-    <span x-click="open = true" class="cursor-pointer">
+    <span x-on:click="open = true" class="cursor-pointer">
       {{ $trigger }}
     </span>
   @else
@@ -29,7 +29,7 @@ You can customize all the html and css classes but YOU MUST KEEP THE BLADE AND L
   <div
     class="bg-white shadow-lg rounded absolute top-8 right-0 border text-left z-10 w-{{ isset($dropDownWidth) ? $dropDownWidth : 'full' }}"
     x-show.transition="open"
-    x-click.away="open = false"
+    x-on:click.away="open = false"
     x-cloak
   >
     {{ $slot }}

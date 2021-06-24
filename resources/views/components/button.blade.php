@@ -15,7 +15,7 @@ props
 --}}
 <button
   class="py-2 px-4 rounded transition duration-200 ease-in-out focus:outline-none {{ isset($block) ? 'w-full' : '' }} {{ variants()->button($variant ?? 'primary')->class() }}"
-  x-click="{{ $onClick ?? '' }}"
+  x-on:click="{{ $onClick ?? '' }}"
   wire:click="{{ $onWireClick ?? '' }}"
 >
   {{ $title }}

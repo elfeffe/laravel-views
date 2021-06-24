@@ -12,7 +12,7 @@ Render an editable input field
             original: {{ json_encode($model->$field) }},
             editing: false
         }"
-        x-click.away="editing = false; value = original;"
+        x-on:click.away="editing = false; value = original;"
 >
         <input
                 x-cloak
@@ -30,7 +30,7 @@ Render an editable input field
         >
     <div
             x-show="!editing"
-            x-click="editing = true; $nextTick(() => {$refs.input.focus();$refs.input.setSelectionRange(-1, -1);});"
+            x-on:click="editing = true; $nextTick(() => {$refs.input.focus();$refs.input.setSelectionRange(-1, -1);});"
             x-html="value"
             class='transition-all duration-300 ease-in-out inline-block cursor-pointer border-b-2 border-dotted border-gray-400 hover:bg-gray-100 p-1'>
         {!! $model->$field !!}

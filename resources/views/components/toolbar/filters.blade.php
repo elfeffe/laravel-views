@@ -24,7 +24,7 @@
     @if (count($filters) > 0)
       {{-- Clear filters button --}}
       <div class="p-4 bg-gray-100 text-right flex justify-end">
-        <a wire:click="clearFilters" x-click="open = false" href="#"
+        <a wire:click="clearFilters" x-on:click="open = false" href="#"
           class="text-gray-600 flex items-center hover:text-gray-700">
           <i data-feather="x-circle" class="mr-2 w-5 h-5"></i>
           Clear filters
